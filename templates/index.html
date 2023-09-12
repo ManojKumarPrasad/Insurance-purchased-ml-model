@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Insurance Purchased Predictor</title>
+</head>
+<body>
+    <div style="background-color: pink" class="login" >
+        <h1>Insurance Purchased Predictor</h1>
+        <h3>Enter the age  of the person to predict whether he/she will buy the ensurance or not.</h3>
+
+        <form action="{{url_for('predict')}}" method="post">
+            <input type="number" name="Age" placeholder="Age" required="required">
+<!--            <input type="number" name="Salary" placeholder="Salary" required="required"/><br>-->
+            <br>
+            <button type="submit" class="btn">Predict</button>
+        </form>
+
+        <br>
+        <br>
+        {{prediction_text}}
+    </div>
+
+</body>
+</html>
