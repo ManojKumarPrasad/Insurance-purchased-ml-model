@@ -1,4 +1,3 @@
-
 import pickle
 import numpy as np
 from flask import Flask, render_template, request
@@ -8,9 +7,11 @@ pickled_model = pickle.load(open('lr.pkl', 'rb'))
 
 app = Flask(__name__)
 
+
 @app.route('/')
 def index():
     return render_template('index.html')
+
 
 @app.route('/predict', methods=['POST'])
 def predict():
@@ -21,10 +22,10 @@ def predict():
     output = int(prediction)
     print(prediction)
     if output == 1:
-        return render_template('index.html',prediction_text="Wo Kharidega")
+        return render_template('index.html', prediction_text="Wo Kharidega")
     else:
         return render_template('index.html', prediction_text="Nahi")
 
+
 if __name__ == '__main__':
     app.run(debug=True)
-
